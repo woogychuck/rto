@@ -1,0 +1,23 @@
+.planet_view {
+    position: relative;
+}
+
+.planet_view .planet_title{
+    font-size: 30px;
+}
+
+.planet_environment {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 200px;
+    background-color: #333;
+}
+
+.planet_civilization {
+    position: absolute;
+    top: 60px;
+    right:0;
+    width: 200px;
+    background-color: #333;
+}

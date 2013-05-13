@@ -20,6 +20,7 @@ var Planet = BaseObject.extend({
         baseGrowth:.01,
         maxNations: 0,
         settlements: [],
+        player: null,
         generatePlanet: function(systemName, distance, tempModifier){
             this.name = systemName + ' ' + romanize(distance);
             var planetSeed = Math.random();
@@ -64,18 +65,22 @@ var Planet = BaseObject.extend({
                 this.type = 'other';
             }
         },
-        isHabitable: function(){
-
+        isHabitable: function(player, settlement){
+            return true;
         },
-        buildSettlement: function(player){
-            //Create civilization
-
+        buildSettlement: function(player, settlement){
             //Create settlement
+            this.settlements.push(settlement);
 
             //Add planet to player's planet list
+            this.player = player;
+            player.planets.push(this);
         },
         endTurn: function(){
-
+            //Iterate over settlements to adjust properties
+            for(var i = 0; i < this.settlements.length; i++){
+                this.settlements[i].endTurn(this);
+            }
         }
     }
 );

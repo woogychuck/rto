@@ -1,10 +1,26 @@
 <div class="planet_view">
-    <pre>{{planet}}</pre>
-	<h1>{{planet.name}}</h1>
+    <div class="planet_header">
+        <h1 class="planet_title">{{planet.name}} <small>{{planet.type}}</small></h1>
+        <strong>Population:</strong> 13,658 (+ 137) |
+        <strong>Research: </strong> 213k |
+        <strong>Trade: </strong> $1.3M |
+        <strong>Industry: </strong> 500k/turn
+    </div>
+
+    <div class="planet_view_graphic">
+        <div class="planet_graphic planet_size_{{planet.size}} planet_type_{{planet.type}}">
+
+        </div>
+        <div class="natural_satellites_graphic">
+
+        </div>
+        <div class="artificial_satellites_graphic">
+
+        </div>
+    </div>
     <div class='planet_environment'>
+        <h2>Environmental Details</h2>
         <dl>
-            <dt>Type</dt>
-            <dd>{{planet.type | scoreWords}}</dd>
             <dt>Global Temperature</dt>
             <dd>{{planet.temp}}</dd>
             <dt>Atmosphere</dt>
@@ -22,5 +38,9 @@
         <ul>
             <li ng-repeat="factor in planet.factors">{{factor.name}}</li>
         </ul>
+    </div>
+    <div class="planet_civilization">
+        <h2>Settlement Details</h2>
+
     </div>
 </div>

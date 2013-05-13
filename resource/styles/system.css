@@ -1,0 +1,100 @@
+.system_view{
+    position: relative;
+}
+
+.system_header{
+     border-bottom:1px solid #666;
+}
+
+.system_header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.system_stars{
+    position: absolute;
+    top:40px;
+    left: 0px;
+}
+
+.system_star {
+    margin-bottom: 20px;
+}
+
+.system_star strong {
+    display: block;
+}
+
+.system_start small {
+    color:#FC0;
+    display: block;
+    margin: 5px;
+}
+
+.system_star_graphic {
+    display:block;
+}
+
+.system_star .spectral_class_M {width:15px; height:30px;}
+.system_star .spectral_class_K {width:20px; height:40px;}
+.system_star .spectral_class_G {width:30px; height:60px;}
+.system_star .spectral_class_F {width:50px; height:100px;}
+.system_star .spectral_class_A {width:75px; height:150px;}
+.system_star .spectral_class_B {width:100px; height:200px;}
+.system_star .spectral_class_O {width:150px; height:300px;}
+.system_star .spectral_class_Q {width:5px; height:100px;}
+.system_star .spectral_class_N {width:10px; height:20px;}
+.system_star .spectral_class_S {width:100px; height:200px;}
+
+.system_planets {
+    margin-left: 170px;
+    height: 600px;
+    overflow: scroll;
+}
+
+.system_planet {
+    width:200px;
+    float:left;
+    text-align: center;
+    margin:5px;
+    background-color: #666;
+}
+
+.system_planet_graphic_wrapper {
+    margin:10px 0;
+}
+
+.system_planet_graphic {
+    display:block;
+}
+
+.system_planet .planet_title {
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #999;
+    color: #fff;
+    font-weight: bold;
+}
+
+.system_planet .planet_type {
+    display: block;
+}
+
+.system_planet .planet_atmosphere {
+    display: block;
+}
+
+.system_planet_graphic_wrapper .planet_size_1 { width:5px; height: 5px; }
+.system_planet_graphic_wrapper .planet_size_2 { width:10px; height: 10px; }
+.system_planet_graphic_wrapper .planet_size_3 { width:15px; height: 15px; }
+.system_planet_graphic_wrapper .planet_size_4 { width:20px; height: 20px; }
+.system_planet_graphic_wrapper .planet_size_5 { width:30px; height: 30px; }
+.system_planet_graphic_wrapper .planet_size_6 { width:40px; height: 40px; }
+.system_planet_graphic_wrapper .planet_size_7 { width:55px; height: 55px; }
+.system_planet_graphic_wrapper .planet_size_8 { width:75px; height: 75px; }
+.system_planet_graphic_wrapper .planet_size_9 { width:100px; height: 100px; }
+.system_planet_graphic_wrapper .planet_size_10 { width:140px; height: 140px; }
+
+.system_planet_graphic_wrapper .planet_type_terrestrial { background-color: #96715F; }
+.system_planet_graphic_wrapper .planet_type_gaseous { background-color: #C3FF68; }

@@ -1,20 +1,35 @@
 <div class="system_view">
+
     <div class="system_header">
         <h2>{{system.name}}</h2>
+        <strong ng-switch-when="system.stars.length = 1">Single Star System</strong>
+        <strong ng-switch-when="system.stars.length = 2">Binary Star System</strong>
+        <strong ng-switch-when="system.stars.length = 3">Trinary Star System</strong>
     </div>
+
     <div class="system_stars">
-        <div class="star" ng-repeat="star in system.stars">
+        <div class="system_star" ng-repeat="star in system.stars">
             <strong>{{star.name}}</strong>
             <small>{{star.className}} ({{star.class}})</small>
             <span class="system_star_graphic spectral_class_{{star.class}}"></span>
         </div>
-    </div>>
-    <strong>Satellites</strong>
-    <ul>
-        <li ng-repeat="planet in system.planets">
-            <a href="#/planet/{{planet.id}}">{{planet.name}} - <small>{{planet.type}} ({{planet.size}})</small></a><br />
-            <em>{{planet.atmosphereType}} ({{planet.atmosphereDensity}})</em> - Temp: {{planet.temp}}<br />
-            Water: {{planet.water}}0% Ice: {{planet.ice}}0%
-        </li>
-    </ul>
+    </div>
+
+    <div class="system_planets">
+        <div class="system_planet" ng-repeat="planet in system.planets">
+            <a href="#/planet/{{planet.id}}" class="planet_title">{{planet.name}}</a>
+            <strong class="planet_type">{{planet.type}} ({{planet.size}})</strong>
+            <small class="planet_atmosphere">{{planet.atmosphereType}} ({{planet.atmosphereDensity}})</small>
+            <div class="system_planet_graphic_wrapper">
+                <span class="system_planet_graphic planet_size_{{planet.size}} planet_type_{{planet.type}}">
+                    <span class="system_planet_atmosphere planet_atmosphere_type_{{planet.atmosphereType}}  planet_atmosphere_type_{{planet.atmosphereDensity}}"></span>
+                </span>
+            </div>
+            <dl>
+                <dt>Temp:</dt> <dd>{{planet.temp}}</dd>
+                <dt>Liquid Water:</dt> <dd>{{planet.water}}0%</dd>
+                <dt>Water Ice:</dt> <dd>{{planet.ice}}0%</dd>
+            </dl>
+        </div>
+    </div>
 </div>

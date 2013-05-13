@@ -1,0 +1,26 @@
+<div class="planet_view">
+    <pre>{{planet}}</pre>
+	<h1>{{planet.name}}</h1>
+    <div class='planet_environment'>
+        <dl>
+            <dt>Type</dt>
+            <dd>{{planet.type | scoreWords}}</dd>
+            <dt>Global Temperature</dt>
+            <dd>{{planet.temp}}</dd>
+            <dt>Atmosphere</dt>
+            <dd>{{planet.atmosphereType | scoreWords}} ({{planet.atmosphereDensity}})</dd>
+            <dt>Water Coverage</dt>
+            <dd>{{planet.water}}0%</dd>
+            <dt>Ice Coverage</dt>
+            <dd>{{planet.ice}}0%</dd>
+        </dl>
+        <h4>Moons</h4>
+        <ul>
+            <li ng-repeat="moon in planet.moons">{{moon.name}}</li>
+        </ul>
+        <h4>Special Factors</h4>
+        <ul>
+            <li ng-repeat="factor in planet.factors">{{factor.name}}</li>
+        </ul>
+    </div>
+</div>

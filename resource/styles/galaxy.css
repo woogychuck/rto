@@ -1,0 +1,83 @@
+#galaxy_view {
+    position:relative;
+    background-color: #000;
+}
+
+.galaxy_system {
+    position: absolute;
+    background-color: #333;
+    width: 60px;
+}
+
+.galaxy_system .system_title{
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 3px 0;
+}
+
+.galaxy_system .system_title:link, .galaxy_system .system_title:visited {
+    color:#fff;
+}
+
+.galaxy_system .system_title:hover, .galaxy_system .system_title:active {
+    color:#fc0;
+}
+
+.galaxy_system .stars {
+    clear: both;
+    margin:3px auto;
+    height: 30px;
+}
+
+.galaxy_system .stars_1 {
+    width: 30px;
+}
+
+.galaxy_system .stars_2 {
+    width: 60px;
+}
+
+.galaxy_star {
+    float: left;
+    width:30px;
+}
+
+.galaxy_star span {
+    display: block;
+    text-indent: -5555px;
+}
+
+.spectral_class_M { background-color:#c00; }
+.spectral_class_K { background-color:#F90; }
+.spectral_class_G { background-color:#FD5; }
+.spectral_class_F { background-color:#FF9; }
+.spectral_class_A { background-color:#FFF; }
+.spectral_class_B { background-color:#DEF; }
+.spectral_class_O { background-color:#CDF; }
+.spectral_class_Q { background-color:#FFF; }
+.spectral_class_N { background-color:#FFF; }
+.spectral_class_S { background-color:#CDF; }
+
+.galaxy_star .spectral_class_M {width:2px; height:2px; margin:14px auto 0 auto;}
+.galaxy_star .spectral_class_K {width:4px; height:4px; margin:13px auto 0 auto;}
+.galaxy_star .spectral_class_G {width:6px; height:6px; margin:12px auto 0 auto;}
+.galaxy_star .spectral_class_F {width:10px; height:10px; margin:10px auto 0 auto;}
+.galaxy_star .spectral_class_A {width:14px; height:14px; margin:8px auto 0 auto;}
+.galaxy_star .spectral_class_B {width:20px; height:20px; margin:5px auto 0 auto;}
+.galaxy_star .spectral_class_O {width:30px; height:30px; margin:0;}
+.galaxy_star .spectral_class_Q {width:2px; height:10px; margin:10px auto 0 auto;}
+.galaxy_star .spectral_class_N {width:2px; height:2px; margin:19px auto 0 auto;}
+.galaxy_star .spectral_class_S {width:20px; height:20px; margin:5px auto 0 auto;}
+
+.galaxy_system .planets {
+    clear: both;
+    margin:3px auto;
+    width:50px;
+    text-align: center;
+}
+
+.galaxy_planet {
+
+}

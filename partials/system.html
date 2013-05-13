@@ -1,0 +1,20 @@
+<div class="system_view">
+    <div class="system_header">
+        <h2>{{system.name}}</h2>
+    </div>
+    <div class="system_stars">
+        <div class="star" ng-repeat="star in system.stars">
+            <strong>{{star.name}}</strong>
+            <small>{{star.className}} ({{star.class}})</small>
+            <span class="system_star_graphic spectral_class_{{star.class}}"></span>
+        </div>
+    </div>>
+    <strong>Satellites</strong>
+    <ul>
+        <li ng-repeat="planet in system.planets">
+            <a href="#/planet/{{planet.id}}">{{planet.name}} - <small>{{planet.type}} ({{planet.size}})</small></a><br />
+            <em>{{planet.atmosphereType}} ({{planet.atmosphereDensity}})</em> - Temp: {{planet.temp}}<br />
+            Water: {{planet.water}}0% Ice: {{planet.ice}}0%
+        </li>
+    </ul>
+</div>

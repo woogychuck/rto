@@ -1,0 +1,17 @@
+<div id='galaxy_view'>
+    <div ng-repeat="system in galaxy.systems">
+        <div class="galaxy_system" style="top:{{system.coordinates[1]}}px; left:{{system.coordinates[0]}}px;">
+            <a href="#/system/{{system.id}}" class="system_title">{{system.name}}</a>
+            <div class="stars stars_{{system.stars.length}}">
+                <div class="galaxy_star" ng-repeat="star in system.stars">
+                    <span class="spectral_class_{{star.class}}">.</span>
+                </div>
+            </div>
+            <div class="planets">
+                <span class="galaxy_planet" ng-repeat="planet in system.planets">
+                    <span class="planet_type_{{planet.type}}">.</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

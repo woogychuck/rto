@@ -1,0 +1,69 @@
+body{
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#gameHeader {
+    background-color: #444;
+    color:#fff;
+    border-top: 5px solid #222;
+    border-bottom: 5px solid #222;
+    padding:20px 20px 0 20px;
+}
+
+#gameHeader h1 {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Roboto Condensed',Arial, Helvetica, sans-serif;
+}
+
+#gameHeader h1 small {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fc0;
+}
+
+#gameHeader nav {
+    background-color: #666;
+    height: 20px;
+    margin-top: 10px;
+}
+
+#gameHeader nav a {
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+    margin: 2px;
+    text-decoration: none;
+    font-weight: bold;
+    width: 100px;
+    float: left;
+}
+
+#gameHeader nav a:link, #gameHeader nav a:visited {
+    color:#fff;
+    background-color: #888;
+}
+
+#gameHeader nav a:hover, #gameHeader nav a:active {
+    color:#fc0;
+    background-color: #999;
+}
+
+#gameHeader nav a.active:link, #gameHeader nav a.active:visited, #gameHeader nav a.active:hover, #gameHeader nav a.active:active{
+    color: #fff;
+    bottom: #fc0;
+}
+
+#gameFooter {
+    background-color: #444;
+    color:#fff;
+    border-bottom: 5px solid #222;
+    padding:20px;
+}
+
+#uiSurface {
+    clear: both;
+    height: 500px;
+}

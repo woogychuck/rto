@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+	<title>Return to Origin</title>
+
+    <link href="resource/styles/reset.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+    <link href="resource/styles/core.css" rel="stylesheet" type="text/css" />
+    <link href="resource/styles/galaxy.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body ng-app="Game">
+	<header id="gameHeader">
+		<h1>Return to Origin <small>v0.1</small></h1>
+        <strong>Section: {{section}}</strong>
+        <nav>
+            <a href="#/galaxy" ng-class="{galaxy:active}[section]">Galaxy</a>
+            <a href="#/overview">Overview</a>
+            <a href="#/research">Research</a>
+            <a href="#/trade">Trade</a>
+            <a href="#/industry">Diplomacy</a>
+            <a href="#/fleet">Fleet</a>
+            <a href="#/game">Game</a>
+        </nav>
+	</header>
+	<div id="uiSurface" ng-view></div>
+    <div id='gameFlow'>
+        <a href="" ng-click="game.nextTurn()">Next Turn</a>
+    </div>
+	<footer id="gameFooter">
+		<p>Made by Ian</p>
+	</footer>
+
+    <!-- LIBRARY / UTILITY SCRIPTS -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script type="text/javascript" src="js/lib/base.js"></script>
+    <script type="text/javascript" src="js/lib/dom_management.js"></script>
+    <script type="text/javascript" src="js/lib/text.js"></script>
+
+    <!-- GAME OBJECTS -->
+    <script type="text/javascript" src="js/models/base_object.js"></script>
+    <script type="text/javascript" src="js/models/civilization.js"></script>
+    <script type="text/javascript" src="js/models/galaxy.js"></script>
+    <script type="text/javascript" src="js/models/improvements/improvement.js"></script>
+    <script type="text/javascript" src="js/models/planet.js"></script>
+    <script type="text/javascript" src="js/models/moon.js"></script>
+    <script type="text/javascript" src="js/models/planet_factor.js"></script>
+    <script type="text/javascript" src="js/models/player.js"></script>
+    <script type="text/javascript" src="js/models/race.js"></script>
+    <script type="text/javascript" src="js/models/settlements/settlement.js"></script>
+    <script type="text/javascript" src="js/models/star.js"></script>
+    <script type="text/javascript" src="js/models/system.js"></script>
+
+    <!-- GAME DATA -->
+    <script type="text/javascript" src="js/game_data/planet_data.js"></script>
+    <script type="text/javascript" src="js/game_data/planet_factors.js"></script>
+    <script type="text/javascript" src="js/game_data/race_data.js"></script>
+    <script type="text/javascript" src="js/game_data/star_data.js"></script>
+
+    <!-- SERVICES -->
+    <script type="text/javascript" src="js/services/services.js"></script>
+    <script type="text/javascript" src="js/services/game_service.js"></script>
+    <script type="text/javascript" src="js/services/planet_service.js"></script>
+
+    <!-- FILTERS -->
+    <script type="text/javascript" src="js/ui_filters/ui_filters.js"></script>
+    <script type="text/javascript" src="js/ui_filters/text_filters.js"></script>
+
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/game_engine.js"></script>
+</body>
+</html>

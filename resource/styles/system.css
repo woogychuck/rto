@@ -65,6 +65,7 @@
 
 .system_planet_graphic {
     display:block;
+    margin:0 auto;
 }
 
 .system_planet .planet_title {
@@ -96,3 +97,23 @@
 
 .system_planet_graphic_wrapper .planet_type_terrestrial { background-color: #96715F; }
 .system_planet_graphic_wrapper .planet_type_gaseous { background-color: #C3FF68; }
+
+.system_planet dl {
+    text-align: left;
+    margin:10px 10px 10px 48px;
+    font-size: 11px;
+}
+.system_planet dt {
+    display:block;
+    clear:left;
+    float:left;
+    width:80px;
+    font-weight: bold;
+    height: 16px;
+}
+
+.system_planet dd {
+    display:block;
+    float: left;
+    width: 50px;
+}

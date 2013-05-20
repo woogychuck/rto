@@ -43,10 +43,28 @@ var System = BaseObject.extend({
                 if(star.maxSatelliteCount > maxSatellites){
                     maxSatellites  = star.maxSatelliteCount;
                 }
-                if(star.tempAdj > tempAdj){
-                    tempAdj = star.tempAdj;
-                }
+                tempAdj += star.tempAdj;
                 this.stars.push(star);
+            }
+
+            //Calculate planet zones based on temperature of system
+            var zones = [];
+
+            if(tempAdj >= 40){
+                //Huge hot systems are likely low metal and have eaten all of their delicious planets
+                zones = [0,0,0,0];
+            }else if(tempAdj >=15 ){
+                //Hot systems have likely absorbed inner planets and destroyed goldilocks planets
+                zones = [0,0,5,10];
+            }else if(tempAdj >= 8){
+                //Things are cooling off, but goldilocks planets are still fairly rare
+                zones = [4,2,5,9];
+            }else if(tempAdj >= 4){
+                //These systems are just right
+                zones = [3,5,4,3];
+            }else{
+                //Small systems with little heat
+                zones = [1,1,2,4];
             }
 
             //Generate Planets

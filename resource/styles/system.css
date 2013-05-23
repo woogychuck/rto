@@ -95,8 +95,10 @@
 .system_planet_graphic_wrapper .planet_size_9 { width:100px; height: 100px; }
 .system_planet_graphic_wrapper .planet_size_10 { width:140px; height: 140px; }
 
-.system_planet_graphic_wrapper .planet_type_terrestrial { background-color: #96715F; }
-.system_planet_graphic_wrapper .planet_type_gaseous { background-color: #C3FF68; }
+.system_planet_atmosphere {
+    display:block;
+    height:100%;
+}
 
 .system_planet dl {
     text-align: left;

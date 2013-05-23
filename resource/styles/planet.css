@@ -21,3 +21,49 @@
     width: 200px;
     background-color: #333;
 }
+
+.planet_type_arid { background-color: #D8E09F; }
+.planet_type_asteroids { background-color: #999; }
+.planet_type_barren { background-color: #CCC; }
+.planet_type_cauldron { background-color: #E2EB46; }
+.planet_type_desert { background-color: #DED097; }
+.planet_type_forest { background-color: #47852A; }
+.planet_type_gas { background-color: #FFF; }
+.planet_type_ice { background-color: #BCDEE8; }
+.planet_type_magma { background-color: #FF8400; }
+.planet_type_ocean { background-color: #4AE8C6; }
+.planet_type_semibarren { background-color: #B07354; }
+
+.planet_atmosphere_type_none { background-color:transparent;}
+.planet_atmosphere_type_hostile { background-color:#FFA200;}
+.planet_atmosphere_type_toxic { background-color:#EDD62B;}
+.planet_atmosphere_type_marginal { background-color:#A9DEC5;}
+.planet_atmosphere_type_breathable { background-color:#26C8DE;}
+
+.planet_atmosphere_type_ammonia { background-color:#1292A3;}
+.planet_atmosphere_type_water { background-color:#E6CF4E;}
+.planet_atmosphere_type_alkali { background-color:#7ED620;}
+.planet_atmosphere_type_silica { background-color:#910404;}
+
+.planet_atmosphere_density_1 { opacity: .1;}
+.planet_atmosphere_density_2 { opacity: .2;}
+.planet_atmosphere_density_3 { opacity: .3;}
+.planet_atmosphere_density_4 { opacity: .4;}
+.planet_atmosphere_density_5 { opacity: .5;}
+.planet_atmosphere_density_6 { opacity: .6;}
+.planet_atmosphere_density_7 { opacity: .7;}
+.planet_atmosphere_density_8 { opacity: .8;}
+.planet_atmosphere_density_9 { opacity: .9;}
+.planet_atmosphere_density_10 { opacity: 1;}
+
+.planet_view_graphic .planet_size_1 { width:25px; height: 25px; }
+.planet_view_graphic .planet_size_2 { width:50px; height: 50px; }
+.planet_view_graphic .planet_size_3 { width:75px; height: 75px; }
+.planet_view_graphic .planet_size_4 { width:100px; height: 100px; }
+.planet_view_graphic .planet_size_5 { width:150px; height: 150px; }
+.planet_view_graphic .planet_size_6 { width:200px; height: 200px; }
+.planet_view_graphic .planet_size_7 { width:275px; height: 275px; }
+.planet_view_graphic .planet_size_8 { width:375px; height: 375px; }
+.planet_view_graphic .planet_size_9 { width:500px; height: 500px; }
+.planet_view_graphic .planet_size_10 { width:700px; height: 700px; }
+

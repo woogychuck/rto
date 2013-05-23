@@ -6,13 +6,17 @@ var Planet = BaseObject.extend({
         },
         name: '',
         size: 0,
+        terrestrial: true,
         type: '',
-        temp: '',
+        zone: '',
+        temp: 0,
         atmosphereDensity: 0,
         atmosphereType: 'none',
         water: 0,
         ice: 0,
         factors: [],
+        satelliteCount: 0,
+        //Only satellites useful for game mechanics are added to the moons array
         moons: [],
         baseIndustry: 5,
         baseResearch: 5,
@@ -22,7 +26,8 @@ var Planet = BaseObject.extend({
         settlements: [],
         player: null,
         generatePlanet: function(systemName, zone){
-            //
+            this.name = systemName;
+            generatePlanetByZone(this, zone);
         },
         isHabitable: function(player, settlement){
             return true;

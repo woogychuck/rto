@@ -6,7 +6,7 @@ var Galaxy = BaseObject.extend({
         systemsById: {},
         planetsById: {},
         generateGalaxy: function(){
-            var systemCount = 3;
+            var systemCount = 12;
             for(var i = 0; i < systemCount; i++){
                 var system = new System();
                 var planets = system.generateSystem();

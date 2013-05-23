@@ -17,8 +17,8 @@ var System = BaseObject.extend({
             this.name = systemName;
 
             //Locate System
-            var x = Math.ceil(Math.random() * 800);
-            var y = Math.ceil(Math.random() * 400);
+            var x = Math.ceil(Math.random() * 1000);
+            var y = Math.ceil(Math.random() * 600);
 
             this.coordinates = [x,y];
 
@@ -27,10 +27,10 @@ var System = BaseObject.extend({
             var starCount = 1;
             var maxSatellites = 0;
             var tempAdj = 0;
-            if(starSeed > .70){
-                starCount = 2;
-            }else if(starSeed > .96){
+            if(starSeed > .96){
                 starCount = 3;
+            }else if(starSeed > .70){
+                starCount = 2;
             }
             for(var i = 1; i <= starCount; i++){
                 var starName = systemName;
@@ -48,31 +48,40 @@ var System = BaseObject.extend({
             }
 
             //Calculate planet zones based on temperature of system
-            var zones = [];
+            var zones = ['inner', 'gold', 'middle', 'outer'];
+            var zoneSatellites = [];
 
             if(tempAdj >= 40){
                 //Huge hot systems are likely low metal and have eaten all of their delicious planets
-                zones = [0,0,0,0];
+                zoneSatellites = [0,0,0,0];
             }else if(tempAdj >=15 ){
                 //Hot systems have likely absorbed inner planets and destroyed goldilocks planets
-                zones = [0,0,5,10];
+                zoneSatellites = [0,0,5,10];
             }else if(tempAdj >= 8){
                 //Things are cooling off, but goldilocks planets are still fairly rare
-                zones = [4,2,5,9];
+                zoneSatellites = [4,2,5,9];
             }else if(tempAdj >= 4){
                 //These systems are just right
-                zones = [3,5,4,3];
+                zoneSatellites = [3,5,4,3];
             }else{
                 //Small systems with little heat
-                zones = [1,1,2,4];
+                zoneSatellites = [1,1,2,4];
             }
 
             //Generate Planets
-            var satelliteCount = Math.floor(Math.random() * maxSatellites);
-            for(var i =0; i < satelliteCount; i++){
-                var planet = new Planet();
-                planet.generatePlanet(this.name,i + 1,tempAdj);
-                this.planets.push(planet);
+            var planetCount = 0;
+            for(var i = 0; i < zoneSatellites.length; i++){
+                if(zoneSatellites[i] > 0){
+                    for(var j = 0; j < zoneSatellites[i]; j++){
+                        var planetSeed = Math.random();
+                        if(planetSeed > .5){
+                            planetCount++;
+                            var planet = new Planet();
+                            planet.generatePlanet(systemName + ' ' + planetCount, zones[i]);
+                            this.planets.push(planet);
+                        }
+                    }
+                }
             }
 
             //Generate Factors

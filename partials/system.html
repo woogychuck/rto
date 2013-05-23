@@ -2,9 +2,11 @@
 
     <div class="system_header">
         <h2>{{system.name}}</h2>
-        <strong ng-switch-when="system.stars.length = 1">Single Star System</strong>
-        <strong ng-switch-when="system.stars.length = 2">Binary Star System</strong>
-        <strong ng-switch-when="system.stars.length = 3">Trinary Star System</strong>
+        <div ng-switch on="system.stars.length">
+            <strong ng-switch-when="1">Single Star System</strong>
+            <strong ng-switch-when="2">Binary Star System</strong>
+            <strong ng-switch-when="3">Trinary Star System</strong>
+        </div>
     </div>
 
     <div class="system_stars">
@@ -22,7 +24,7 @@
             <small class="planet_atmosphere">{{planet.atmosphereType}} ({{planet.atmosphereDensity}})</small>
             <div class="system_planet_graphic_wrapper">
                 <span class="system_planet_graphic planet_size_{{planet.size}} planet_type_{{planet.type}}">
-                    <span class="system_planet_atmosphere planet_atmosphere_type_{{planet.atmosphereType}}  planet_atmosphere_type_{{planet.atmosphereDensity}}"></span>
+                    <span class="system_planet_atmosphere planet_atmosphere_type_{{planet.atmosphereType}}  planet_atmosphere_density_{{planet.atmosphereDensity}}"></span>
                 </span>
             </div>
             <dl>

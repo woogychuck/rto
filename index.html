@@ -14,7 +14,6 @@
 <body ng-app="Game">
 	<header id="gameHeader">
 		<h1>Return to Origin <small>v0.1</small></h1>
-        <strong>Section: {{section}}</strong>
         <nav>
             <a href="#/galaxy" ng-class="{galaxy:active}[section]">Galaxy</a>
             <a href="#/overview">Overview</a>
@@ -59,10 +58,13 @@
     <script type="text/javascript" src="js/game_data/race_data.js"></script>
     <script type="text/javascript" src="js/game_data/star_data.js"></script>
 
+    <!-- UTILITIES -->
+    <script type="text/javascript" src="js/utilities/planet_utility.js"></script>
+    <script type="text/javascript" src="js/utilities/math.js"></script>
+
     <!-- SERVICES -->
     <script type="text/javascript" src="js/services/services.js"></script>
     <script type="text/javascript" src="js/services/game_service.js"></script>
-    <script type="text/javascript" src="js/services/planet_service.js"></script>
 
     <!-- FILTERS -->
     <script type="text/javascript" src="js/ui_filters/ui_filters.js"></script>

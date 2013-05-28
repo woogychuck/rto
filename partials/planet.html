@@ -41,6 +41,21 @@
     </div>
     <div class="planet_civilization">
         <h2>Settlement Details</h2>
-
+        <div ng-switch on="planet.isColonized()">
+            <div ng-swtch-when="true">
+                <strong>Planet is Colonized</strong>
+            </div>
+            <div ng-switch-when="false" ng-switch on="planet.isHabitable()">
+                <div ng-switch-when="true">
+                    <strong class="btn" ng-click="planet.buildSettlement(game.player)">Colonize Planet</strong>
+                </div>
+                <div ng-switch-when="false">
+                    <strong>Can't Colonize Here</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="debugOutput">
+        {{planet}}
     </div>
 </div>

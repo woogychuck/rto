@@ -25,14 +25,19 @@ var Planet = BaseObject.extend({
         maxNations: 0,
         settlements: [],
         player: null,
-        generatePlanet: function(systemName, zone){
+        systemId: '',
+        generatePlanet: function(systemName, zone, systemId){
             this.name = systemName;
+            this.systemId = systemId;
             generatePlanetByZone(this, zone);
         },
         isHabitable: function(player, settlement){
-            return true;
+            return this.terrestrial;
         },
-        buildSettlement: function(player, settlement){
+        isColonized: function(){
+            return this.player != null;
+        },
+        buildSettlement: function(settlement){
             //Create settlement
             this.settlements.push(settlement);
 

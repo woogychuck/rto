@@ -77,7 +77,7 @@ var System = BaseObject.extend({
                         if(planetSeed > .5){
                             planetCount++;
                             var planet = new Planet();
-                            planet.generatePlanet(systemName + ' ' + planetCount, zones[i]);
+                            planet.generatePlanet(systemName + ' ' + planetCount, zones[i], this.id);
                             this.planets.push(planet);
                         }
                     }

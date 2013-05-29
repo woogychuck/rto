@@ -15,6 +15,11 @@ var Player = BaseObject.extend({
         improvementsUnlocked: {},
         researchOutput: 0,
         tradeOutput: 0,
-        totalPopulation: 0
+        totalPopulation: 0,
+        endTurn: function(){
+            for(var i = 0; i < this.planets.length; i++){
+                this.planets[i].endTurn();
+            }
+        }
     }
 );

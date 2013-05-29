@@ -1,10 +1,13 @@
 <div class="planet_view">
     <div class="planet_header">
         <h1 class="planet_title">{{planet.name}} <small>{{planet.type}}</small></h1>
-        <strong>Population:</strong> 13,658 (+ 137) |
-        <strong>Research: </strong> 213k |
-        <strong>Trade: </strong> $1.3M |
-        <strong>Industry: </strong> 500k/turn
+        <strong>Population:</strong> {{planet.currentPopulation}} (+ {{planet.currentGrowth}}) |
+        <strong>Research: </strong> {{planet.currentResearch}}/turn |
+        <strong>Trade: </strong> ${{planet.currentTrade}} |
+        <strong>Industry: </strong> {{planet.currentIndustry}}/turn
+    </div>
+    <div>
+        <a href='#/system/{{planet.systemId}}'>Back to System</a>
     </div>
 
     <div class="planet_view_graphic">
@@ -18,9 +21,9 @@
 
         </div>
     </div>
-    <div class='planet_environment'>
+    <div class='planet_environment panel'>
         <h2>Environmental Details</h2>
-        <dl>
+        <dl class="propList">
             <dt>Global Temperature</dt>
             <dd>{{planet.temp}}</dd>
             <dt>Atmosphere</dt>
@@ -39,23 +42,27 @@
             <li ng-repeat="factor in planet.factors">{{factor.name}}</li>
         </ul>
     </div>
-    <div class="planet_civilization">
+    <div class="planet_civilization panel">
         <h2>Settlement Details</h2>
-        <div ng-switch on="planet.isColonized()">
-            <div ng-swtch-when="true">
-                <strong>Planet is Colonized</strong>
+        <div ng-show="planet.isColonized()">
+            <strong>Planet is Colonized</strong>
+        </div>
+        <div ng-switch on="planet.isColonizable()">
+            <div ng-switch-when="true">
+                <strong class="btn" ng-click="pickSettlement = true;">Colonize Planet</strong>
+                <div ng-show="pickSettlement">
+                    <span ng-click="planet.buildSettlement('habitat', game.player)">Build Habitat</span>
+                    <span ng-click="planet.buildSettlement('outpost', game.player)">Build Outpost</span>
+                    <span ng-click="planet.buildSettlement('colony', game.player)">Build Colony</span>
+                    <span ng-click="pickSettlement = false">Cancel</span>
+                </div>
             </div>
-            <div ng-switch-when="false" ng-switch on="planet.isHabitable()">
-                <div ng-switch-when="true">
-                    <strong class="btn" ng-click="planet.buildSettlement(game.player)">Colonize Planet</strong>
-                </div>
-                <div ng-switch-when="false">
-                    <strong>Can't Colonize Here</strong>
-                </div>
+            <div ng-switch-when="false">
+                <strong>Can't Colonize Here</strong>
             </div>
         </div>
     </div>
     <div id="debugOutput">
-        {{planet}}
+
     </div>
 </div>

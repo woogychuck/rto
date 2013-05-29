@@ -1,6 +1,6 @@
 var Outpost = Settlement.extend({
-        init: function (player) {
-            this._super(player);
+        init: function (player, planet) {
+            this._super(player, planet);
             this.class = 'outpost';
         },
         initialPopulation: 200,
@@ -18,8 +18,8 @@ var Outpost = Settlement.extend({
 );
 
 var AdvancedOutpost = Settlement.extend({
-        init: function (player) {
-            this._super(player);
+        init: function (player, planet) {
+            this._super(player, planet);
             this.class = 'outpost';
         },
         initialPopulation: 200,
@@ -38,8 +38,8 @@ var AdvancedOutpost = Settlement.extend({
 );
 
 var DeepSpaceOutpost = Settlement.extend({
-        init: function (player) {
-            this._super(player);
+        init: function (player, planet) {
+            this._super(player, planet);
             this.class = 'outpost';
         },
         initialPopulation: 200,
@@ -59,8 +59,8 @@ var DeepSpaceOutpost = Settlement.extend({
 );
 
 var UltimateOutpost = Settlement.extend({
-        init: function (player) {
-            this._super(player);
+        init: function (player, planet) {
+            this._super(player, planet);
             this.class = 'outpost';
         },
         initialPopulation: 300,

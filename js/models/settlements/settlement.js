@@ -1,7 +1,9 @@
 var Settlement = BaseObject.extend({
-        init: function (player) {
+        init: function (player, planet) {
             this._super('settlement');
             this.player = player;
+            this.planet = planet;
+            this.setup();
         },
         class: '',
         initialPopulation: 0,
@@ -23,28 +25,37 @@ var Settlement = BaseObject.extend({
         water: false,
         orbital: false,
         player: null,
+        planet: null,
         improvements: [],
         projectQueue: [],
-        endTurn: function(){
-            //Loop through improvements to adjust modifiers
+        updateStats: function(){
+            //Apply modifiers/improvements
+            this.currentPopulationGrowth = this.basePopulationGrowth;
+            this.currentPopulationCap = this.basePopulationCap;
 
-            //Calculate turn output
-            var newPopulation = Math.ceil(this.currentPopulation * (1 + this.currentPopulationGrowth));
-            if(newPopulation > this.currentPopulationCap){
-                newPopulation = this.currentPopulationCap;
+            //Update population
+            var growthFactor = this.player.race.growthRate * this.planet.currentGrowth * this.currentPopulationGrowth;
+            var growthAmount = this.currentPopulation * growthFactor;
+            if(this.currentPopulation + growthAmount > this.currentPopulationCap){
+                this.currentPopulation = this.currentPopulationCap;
+            }else{
+                this.currentPopulation += growthAmount;
             }
-            this.currentPopulation = newPopulation;
 
-            var turnTradeOutput = Math.ceil(this.currentPopulation * this.currentTradeOutput);
-            var turnResearchOutput = Math.ceil(this.currentPopulation * this.currentResearchOutput);
-            var turnIndustrialOutput = Math.ceil(this.currentPopulation * this.currentIndustrialOutput);
+            //Update Research
+
+        },
+        setup: function(){
+            this.updateStats();
+            this.planet.currentPopulation += this.currentPopulation;
+        },
+        endTurn: function(){
+            this.updateStats();
 
             //Update current project
 
-            //Update Player
-            this.player.totalPopulation += newPopulation;
-            this.player.researchOutput += turnResearchOutput;
-            this.player.tradeOutput += turnTradeOutput;
+            //Update Planet
+            this.planet.currentPopulation += this.currentPopulation;
         },
         queueProject: function(improvement){
 

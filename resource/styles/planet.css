@@ -1,5 +1,6 @@
 .planet_view {
     position: relative;
+    margin:10px 30px;
 }
 
 .planet_view .planet_title{
@@ -8,18 +9,24 @@
 
 .planet_environment {
     position: absolute;
-    top: 60px;
+    top: 80px;
     left: 0;
     width: 200px;
-    background-color: #333;
 }
 
 .planet_civilization {
     position: absolute;
-    top: 60px;
-    right:0;
+    top: 80px;
+    right: 0;
     width: 200px;
-    background-color: #333;
+}
+
+.planet_view_graphic {
+    margin: 20px 200px;
+}
+
+.planet_view_graphic .planet_graphic {
+    margin: 10px auto;
 }
 
 .planet_type_arid { background-color: #D8E09F; }

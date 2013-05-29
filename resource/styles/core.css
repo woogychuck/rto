@@ -53,7 +53,6 @@ body{
 
 #gameHeader nav a.active:link, #gameHeader nav a.active:visited, #gameHeader nav a.active:hover, #gameHeader nav a.active:active{
     color: #fff;
-    bottom: #fc0;
 }
 
 #gameFooter {
@@ -66,4 +65,33 @@ body{
 #uiSurface {
     clear: both;
     height: 700px;
+}
+
+.panel {
+    background-color: #333;
+    padding: 10px;
+    border:1px solid #999;
+}
+
+.panel h2, .panel h3, .panel h4 {
+    clear:both;
+}
+
+.propList {
+    margin:0;
+}
+
+.propList dt {
+    display:block;
+    float:left;
+    clear:left;
+    font-weight: bold;
+    width: 100px;
+}
+
+.propList dd {
+    display:block;
+    float: left;
+    width:90px;
+    margin-left: 10px;
 }

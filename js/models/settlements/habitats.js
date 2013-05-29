@@ -1,6 +1,6 @@
 var Habitat = Settlement.extend({
-        init: function (player) {
-            this._super(player);
+        init: function (player, planet) {
+            this._super(player, planet);
             this.class = 'habitat';
         },
         initialPopulation: 100,
@@ -14,8 +14,8 @@ var Habitat = Settlement.extend({
 );
 
 var AdvancedHabitat = Settlement.extend({
-        init: function (player) {
-            this._super(player);
+        init: function (player, planet) {
+            this._super(player, planet);
             this.class = 'habitat';
         },
         initialPopulation: 100,
@@ -30,8 +30,8 @@ var AdvancedHabitat = Settlement.extend({
 );
 
 var DeepSpaceHabitat = Settlement.extend({
-        init: function (player) {
-            this._super(player);
+        init: function (player, planet) {
+            this._super(player, planet);
             this.class = 'habitat';
         },
         initialPopulation: 100,
@@ -47,8 +47,8 @@ var DeepSpaceHabitat = Settlement.extend({
 );
 
 var UltimateHabitat = Settlement.extend({
-        init: function (player) {
-            this._super(player);
+        init: function (player, planet) {
+            this._super(player, planet);
             this.class = 'habitat';
         },
         initialPopulation: 250,

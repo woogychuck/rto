@@ -20,15 +20,21 @@ var Planet = BaseObject.extend({
         satelliteCount: 0,
         //Only satellites useful for game mechanics are added to the moons array
         moons: [],
-        baseIndustry: 5,
-        baseResearch: 5,
-        baseTrade: 5,
-        baseGrowth: 1,
+        baseIndustrialRate: 5,
+        baseResearchRate: 5,
+        baseTradeRate: 5,
+        baseIndustrialOutput: 0,
+        baseResearchOutput: 0,
+        baseTradeOutput: 0,
+        baseGrowthRate: 1,
         currentPopulation: 0,
-        currentIndustry: 0,
-        currentResearch: 0,
-        currentTrade: 0,
-        currentGrowth: 0,
+        currentIndustrialRate: 0,
+        currentResearchRate: 0,
+        currentTradeRate: 0,
+        currentIndustrialOutput: 0,
+        currentResearchOutput: 0,
+        currentTradeOutput: 0,
+        currentGrowthRate: 0,
         currentGrowthAmount: 0,
         maxSettlements: 1,
         settlements: [],
@@ -66,31 +72,40 @@ var Planet = BaseObject.extend({
             //Add planet to player's planet list
             this.player = player;
             player.planets.push(this);
-            this.updateStats();
+            this.updateStats(false);
         },
-        updateStats: function(){
+        updateStats: function(endTurn){
             //Clear Stats
-            this.currentGrowth = 0;
-            this.currentIndustry = 0;
+            this.currentGrowthRate = this.baseGrowthRate;
             this.currentPopulation = 0;
-            this.currentResearch = 0;
-            this.currentTrade = 0;
+            this.currentGrowthAmount = 0;
+
+            this.currentIndustrialRate = this.baseIndustrialRate;
+            this.currentResearchRate = this.baseResearchRate;
+            this.currentTradeRate = this.baseTradeRate;
+
+            this.currentIndustrialOutput = 0;
+            this.currentResearchOutput = 0;
+            this.currentTradeOutput = 0;
 
             //Update Planet Stats
 
             //Iterate over settlements
             for(var i = 0; i < this.settlements.length; i++){
-                this.settlements[i].updateStats();
+                if(endTurn){
+                    this.settlements[i].endTurn();
+                }else{
+                    this.settlements[i].updateStats();
+                }
                 this.currentPopulation += this.settlements[i].currentPopulation;
-                this.currentGrowthAmount += this.settlements[i].currentPopulationGrowthAmount;
-                this.currentIndustry += this.settlements[i].currentIndustrialOutput;
-                this.currentResearch += this.settlements[i].currentResearchOutput;
-                this.currentTrade += this.settlements[i].currentTradeOutput;
+                this.currentGrowthAmount += this.settlements[i].currentGrowthAmount;
+                this.currentIndustrialOutput += this.settlements[i].currentIndustrialOutput;
+                this.currentResearchOutput += this.settlements[i].currentResearchOutput;
+                this.currentTradeOutput += this.settlements[i].currentTradeOutput;
             }
         },
         endTurn: function(){
-            this.updateStats();
-            console.log('Turn Ended');
+            this.updateStats(true);
         }
     }
 );

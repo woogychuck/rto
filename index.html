@@ -23,11 +23,10 @@
             <a href="#/fleet">Fleet</a>
             <a href="#/game">Game</a>
         </nav>
+        <div player-info></div>
 	</header>
 	<div id="uiSurface" ng-view></div>
-    <div id='gameFlow'>
-        <a href="" ng-click="game.nextTurn()">Next Turn</a>
-    </div>
+    <div turn-control></div>
 	<footer id="gameFooter">
 		<p>Made by Ian</p>
 	</footer>
@@ -73,7 +72,12 @@
     <script type="text/javascript" src="js/ui_filters/text_filters.js"></script>
 
     <!-- MODULES -->
+    <script type="text/javascript" src="js/modules/game_flow.js"></script>
     <script type="text/javascript" src="js/modules/galaxy.js"></script>
+
+    <!-- DIRECTIVES -->
+    <script type="text/javascript" src="js/directives/turn_control.js"></script>
+    <script type="text/javascript" src="js/directives/player_info.js"></script>
 
     <!-- CORE FILES -->
     <script type="text/javascript" src="js/game.js"></script>

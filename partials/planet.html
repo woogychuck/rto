@@ -2,9 +2,9 @@
     <div class="planet_header">
         <h1 class="planet_title">{{planet.name}} <small>{{planet.type}}</small></h1>
         <strong>Population:</strong> {{planet.currentPopulation}} (+ {{planet.currentGrowthAmount}}) |
-        <strong>Research: </strong> {{planet.currentResearch}}/turn |
-        <strong>Trade: </strong> ${{planet.currentTrade}} |
-        <strong>Industry: </strong> {{planet.currentIndustry}}/turn
+        <strong>Research: </strong> {{planet.currentResearchOutput}}/turn |
+        <strong>Trade: </strong> ${{planet.currentTradeOutput}} |
+        <strong>Industry: </strong> {{planet.currentIndustrialOutput}}/turn
     </div>
     <div>
         <a href='#/system/{{planet.systemId}}'>Back to System</a>

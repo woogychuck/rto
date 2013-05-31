@@ -1,4 +1,4 @@
-var main = angular.module('Game',['Game.Services','UIFilters','Galaxy']).
+var main = angular.module('Game',['Game.Services','UIFilters','GameFlow','Galaxy']).
 	config(['$routeProvider', function($routeProvider){
 		$routeProvider.
             when('/overview', {templateUrl: 'partials/overview.html', controller: OverviewCtrl}).

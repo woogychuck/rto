@@ -2,7 +2,7 @@
     <h3>Planets</h3>
     <ul>
         <li ng-repeat="planet in game.player.planets">
-            <a href="#/planet/{{planet.id}}">{{planet.name}}</a>
+            <a href="#/planet/{{planet.id}}">{{planet.name}}</a> - Population: {{planet.currentPopulation}}
         </li>
     </ul>
 </div>

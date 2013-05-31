@@ -18,6 +18,7 @@ var Settlement = BaseObject.extend({
         currentIndustrialOutput: 0,
         basePopulationGrowth: 0,
         currentPopulationGrowth: 0,
+        currentPopulationGrowthAmount: 0,
         tempVar: 0,
         densityVar: 0,
         reactiveAtmosphere: false,
@@ -29,33 +30,42 @@ var Settlement = BaseObject.extend({
         improvements: [],
         projectQueue: [],
         updateStats: function(){
-            //Apply modifiers/improvements
+            //Set Baseline
             this.currentPopulationGrowth = this.basePopulationGrowth;
             this.currentPopulationCap = this.basePopulationCap;
+            this.currentIndustrialOutput = this.baseIndustrialOutput;
+            this.currentResearchOutput = this.baseResearchOutput;
+            this.currentTradeOutput = this.baseTradeOutput;
+
+            //Apply improvements
+            for(var i = 0; i < this.improvements.length; i++){
+
+            }
 
             //Update population
             var growthFactor = this.player.race.growthRate * this.planet.currentGrowth * this.currentPopulationGrowth;
             var growthAmount = this.currentPopulation * growthFactor;
             if(this.currentPopulation + growthAmount > this.currentPopulationCap){
-                this.currentPopulation = this.currentPopulationCap;
-            }else{
-                this.currentPopulation += growthAmount;
+                growthAmount = this.currentPopulationCap - this.currentPopulation;
             }
+            this.currentPopulationGrowthAmount = growthAmount;
 
             //Update Research
+            this.currentResearchOutput = this.currentResearchOutput * this.currentPopulation;
+
+            //Update Industry
+            this.currentIndustrialOutput = this.currentIndustrialOutput * this.currentPopulation;
+
+            //Update Trade
+            this.currentTradeOutput = this.currentTradeOutput * this.currentPopulation;
 
         },
         setup: function(){
+            this.currentPopulation = this.initialPopulation;
             this.updateStats();
-            this.planet.currentPopulation += this.currentPopulation;
         },
         endTurn: function(){
             this.updateStats();
-
-            //Update current project
-
-            //Update Planet
-            this.planet.currentPopulation += this.currentPopulation;
         },
         queueProject: function(improvement){
 

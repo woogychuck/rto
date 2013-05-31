@@ -12,7 +12,7 @@ RACE_DATA.Human = {
     researchRate:.8,
     industryRate:.8,
     tradeRate:1.4,
-    growthRate:1
+    growthRate:.1
 };
 
 RACE_DATA.Formisan = {
@@ -25,7 +25,7 @@ RACE_DATA.Formisan = {
     researchRate:.6,
     industryRate:1.5,
     tradeRate:.8,
-    growthRate:2
+    growthRate:.2
 };
 
 RACE_DATA.Maton = {
@@ -38,5 +38,5 @@ RACE_DATA.Maton = {
     researchRate:1.5,
     industryRate:1.5,
     tradeRate:.5,
-    growthRate:.5
+    growthRate:.05
 };

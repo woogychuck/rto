@@ -73,6 +73,7 @@ function generatePlanetByType(planet, type, zone){
             planet.atmosphereType = getHabitableAtmosphere(0,4);
             planet.water = randomRange(2,3);
             planet.ice = randomRange(0,1);
+            planet.maxSettlements = Math.floor(planet.size/2);
             break;
         case 'asteroids':
             planet.size = 1;
@@ -87,6 +88,7 @@ function generatePlanetByType(planet, type, zone){
                 planet.size = randomRange(1,7);
             }
             planet.temp = 2 + (tempModifier >= -2 ? tempModifier : -2);
+            planet.maxSettlements = randomRange(1,2);
             break;
         case 'cauldron':
             planet.size = randomRange(3,6);
@@ -102,6 +104,7 @@ function generatePlanetByType(planet, type, zone){
             if(planet.temp <= 5){
                 planet.ice = randomRange(0,2);
             }
+            planet.maxSettlements = Math.floor(planet.size/2);
             break;
         case 'forest':
             planet.size = randomRange(3,6);
@@ -110,6 +113,7 @@ function generatePlanetByType(planet, type, zone){
             planet.atmosphereType = getHabitableAtmosphere(2,5);
             planet.water = randomRange(3,5);
             planet.ice = randomRange(0,1);
+            planet.maxSettlements = planet.size;
             break;
         case 'gas':
             planet.size = randomRange(7,10);

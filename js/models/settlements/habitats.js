@@ -4,10 +4,9 @@ var Habitat = Settlement.extend({
             this.class = 'habitat';
         },
         initialPopulation: 100,
-        currentPopulation: 100,
+        baseGrowthRate: 0,
         basePopulationCap: 100,
         baseResearchOutput: 2,
-        currentResearchOutput: 200,
         tempVar: 2,
         densityVar: 2
     }
@@ -19,10 +18,9 @@ var AdvancedHabitat = Settlement.extend({
             this.class = 'habitat';
         },
         initialPopulation: 100,
-        currentPopulation: 100,
+        baseGrowthRate: 0,
         basePopulationCap: 100,
         baseResearchOutput: 2,
-        currentResearchOutput: 200,
         tempVar: 4,
         densityVar: 4,
         reactiveAtmosphere: true
@@ -35,10 +33,9 @@ var DeepSpaceHabitat = Settlement.extend({
             this.class = 'habitat';
         },
         initialPopulation: 100,
-        currentPopulation: 100,
+        baseGrowthRate: 0,
         basePopulationCap: 100,
         baseResearchOutput: 3,
-        currentResearchOutput: 300,
         tempVar: 10,
         densityVar: 10,
         reactiveAtmosphere:true,
@@ -52,10 +49,9 @@ var UltimateHabitat = Settlement.extend({
             this.class = 'habitat';
         },
         initialPopulation: 250,
-        currentPopulation: 250,
+        baseGrowthRate: 0,
         basePopulationCap: 250,
         baseResearchOutput: 3,
-        currentResearchOutput: 750,
         tempVar: 10,
         densityVar: 10,
         reactiveAtmosphere: true,

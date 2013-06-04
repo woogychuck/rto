@@ -58,10 +58,12 @@
                 <div ng-switch-when="true">
                     <strong class="btn" ng-click="pickSettlement = true;">Colonize Planet</strong>
                     <div ng-show="pickSettlement">
-                        <span ng-click="planet.buildSettlement('habitat', game.player)">Build Habitat</span>
-                        <span ng-click="planet.buildSettlement('outpost', game.player)">Build Outpost</span>
-                        <span ng-click="planet.buildSettlement('colony', game.player)">Build Colony</span>
-                        <span ng-click="pickSettlement = false">Cancel</span>
+                        <ul>
+                            <li><span ng-click="planet.buildSettlement('habitat', game.player)">Build Standard Habitat</span></li>>
+                            <li><span ng-click="planet.buildSettlement('outpost', game.player)">Build Outpost</span></li>
+                            <li><span ng-click="planet.buildSettlement('colony', game.player)">Build Colony</span></li>
+                            <li><span ng-click="pickSettlement = false">Cancel</span></li>
+                        </ul>
                     </div>
                 </div>
                 <div ng-switch-when="false">

@@ -1,15 +1,14 @@
-var ResearchProject = BaseObject.extend({
+var EngineeringProject = BaseObject.extend({
     init: function () {
         this._super('research');
-        this.engineeringProjects = [];
     },
     name:'',
     description:'',
     researchPoints: 0,
-    gridX: 0,
-    gridY: 0,
-    engineeringProjects: [],
+    direction:'',
+    techLevel: 1,
     completeProject : function(player){
     }
 });
+
 

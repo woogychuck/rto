@@ -39,5 +39,7 @@ researchModule.controller('ResearchCtrl', function($scope){
     ember.engineeringProjects.push(ascetic);
 
 
+
+
 });
 
